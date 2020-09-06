@@ -2,6 +2,7 @@ package continuada1.Produtos;
 
 
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -12,46 +13,82 @@ public abstract class Produto {
     private String nome;
     private Double valor;
     private Integer quantidadeProduto;
-    private Date data = new Date();
-    SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-
-    private String dataCompra = formatador.format(data);
-
+    private Double peso;
+    private Date dataCompra;
+    private Date dataVencimento;
 
     //Construtor
-    public Produto(Integer codigo, String nome, Double valor, Integer quantidadeProduto, String dataCompra) {
+    public Produto(Integer codigo, String nome, Double valor, Integer quantidadeProduto, Double peso, Date dataCompra, Date dataVencimento) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
         this.quantidadeProduto = quantidadeProduto;
+        this.peso = peso;
         this.dataCompra = dataCompra;
+        this.dataVencimento = dataVencimento;
     }
 
     //Métodos
-    public abstract Double subTotal();
+    public abstract Double getSubTotal();
 
     //Getters
+
+
     public Integer getCodigo() {
         return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Double getValor() {
         return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     public Integer getQuantidadeProduto() {
         return quantidadeProduto;
     }
 
-    public String getDataCompra() {
+    public void setQuantidadeProduto(Integer quantidadeProduto) {
+        this.quantidadeProduto = quantidadeProduto;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public Date getDataCompra() {
         return dataCompra;
     }
 
+    public void setDataCompra(Date dataCompra) {
+        this.dataCompra = dataCompra;
+    }
 
+    public Date getDataVencimento() {
+        return dataVencimento;
+    }
+
+    public void setDataVencimento(Date dataVencimento) {
+        this.dataVencimento = dataVencimento;
+    }
 
     //ToString
     @Override
@@ -61,7 +98,7 @@ public abstract class Produto {
                 "\nNome: " + nome +
                 "\nValor: " + valor +
                 "\nQuantidade produto: " + quantidadeProduto +
-                "\n Subtotal do produto: " + subTotal();
-                //"\nData compra: " + dtaCompra;
+                "\nSubtotal do produto: " + getSubTotal();
+                //"\nData compra: " + dataCompra;
     }
 }
