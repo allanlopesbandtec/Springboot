@@ -106,10 +106,9 @@ public class EstoqueController {
                     return ResponseEntity.ok(produto);
                 }
             }
-        } //Amanda corrigiu legal
+        }
 
         return ResponseEntity.status(404).build();
-
     }
 
 }
