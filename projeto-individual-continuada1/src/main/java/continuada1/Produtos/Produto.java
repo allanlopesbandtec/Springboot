@@ -14,11 +14,12 @@ public abstract class Produto {
     private Double valor;
     private Integer quantidadeProduto;
     private Double peso;
-    private Date dataCompra;
-    private Date dataVencimento;
+    private String dataCompra;
+    private String dataVencimento;
+
 
     //Construtor
-    public Produto(Integer codigo, String nome, Double valor, Integer quantidadeProduto, Double peso, Date dataCompra, Date dataVencimento) {
+    public Produto(Integer codigo, String nome, Double valor, Integer quantidadeProduto, Double peso, String dataCompra, String dataVencimento) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
@@ -74,19 +75,19 @@ public abstract class Produto {
         this.peso = peso;
     }
 
-    public Date getDataCompra() {
+    public String getDataCompra() {
         return dataCompra;
     }
 
-    public void setDataCompra(Date dataCompra) {
+    public void setDataCompra(String dataCompra) {
         this.dataCompra = dataCompra;
     }
 
-    public Date getDataVencimento() {
+    public String getDataVencimento() {
         return dataVencimento;
     }
 
-    public void setDataVencimento(Date dataVencimento) {
+    public void setDataVencimento(String dataVencimento) {
         this.dataVencimento = dataVencimento;
     }
 

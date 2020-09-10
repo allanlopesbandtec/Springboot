@@ -7,7 +7,7 @@ public class Alimento extends Produto {
     //Atributos
 
     //Construtor
-    public Alimento(Integer codigo, String nome, Double valor, Integer quantidadeProduto, Double peso, Date dataCompra, Date dataVencimento) {
+    public Alimento(Integer codigo, String nome, Double valor, Integer quantidadeProduto, Double peso, String dataCompra, String dataVencimento) {
         super(codigo, nome, valor, quantidadeProduto, peso, dataCompra, dataVencimento);
     }
 
