@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/estoque")
+@RequestMapping("/estoques")
 public class EstoqueController {
 
     private List<Produto> listaProdutos = new ArrayList<>();
@@ -36,7 +36,7 @@ public class EstoqueController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/editar/higiene/{id}")
     public ResponseEntity editarProduto(@PathVariable Integer id, @RequestBody Higiene higiene) {
         if (listaProdutos.size() >= id){
             listaProdutos.remove(id - 1);
@@ -47,7 +47,18 @@ public class EstoqueController {
         }
     }
 
-    @GetMapping("/gastoGeral")
+    @PutMapping("/alimento/{id}")
+    public ResponseEntity editarProduto(@PathVariable Integer id, @RequestBody Alimento alimento) {
+        if (listaProdutos.size() >= id){
+            listaProdutos.remove(id - 1);
+            listaProdutos.add(id - 1, alimento);
+            return ResponseEntity.status(200).build();
+        } else{
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+    @GetMapping("/gastogeral")
     public ResponseEntity gastoGeral() {
 
         if (listaProdutos.isEmpty()){
